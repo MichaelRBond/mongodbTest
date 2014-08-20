@@ -13,6 +13,8 @@ yum -y install git
 yum -y install mongodb-org
 
 printf "\n" | pecl install mongo
+rm -f /etc/php.ini
+ln -s /vagrant/php.ini /etc/php.ini
 
 mv /etc/httpd/conf.d/mod_security.conf /etc/httpd/conf.d/mod_security.conf.bak
 /etc/init.d/httpd start
